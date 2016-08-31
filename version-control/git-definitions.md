@@ -13,3 +13,6 @@ A commit is a save point. A good commit message tells you specific information o
 
 * What is a merge conflict?
 It happens when theres a problem with merging files. One person might modify a line and then another person might delete the modified line.
+
+-----
+tagging teacher

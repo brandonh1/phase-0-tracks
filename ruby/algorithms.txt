@@ -1,0 +1,52 @@
+release 0
+
+-step until you reach elevator
+-press button 
+-wait for elevator to open
+  -if full 
+    -wait for next one
+  -else if theres space
+     -enter elevator
+     -look around for buttons to push
+     -pick the floor number you would like to go to
+     -wait
+     -look above the eleavtor door to see when it reaches the floor you want to go to
+     -once the number comes up wait for door to open
+     -leave elevator
+
+
+
+release 1
+
+eating cereal
+
+-go to cabinet
+  -grab spoon and bowl
+  -place both on table
+-go back to cabinet to look for cereal
+  -if theres cereal
+    -grab it
+    -place on table
+  -else if theres no cereal
+     -go to store
+     -buy cereal
+     -place cereal on table
+-go to fridge
+  -look for milk
+    -if there is milk
+      -grab milk
+      -place milk on table
+    -else if theres no milk
+      -go to grocery store
+      -buy milk
+      -place milk on table
+-pour milk in bowl until satisfied
+-pour cereal in bowl until satisfied
+-while bowl of cereal still has milk and cereal
+  -take a bite
+  -if there is milk and no cereal
+    -pour cereal until satisfied
+  -if there is cereal and no milk
+    -eat all of the cereal
+-put away everything and clean up
+

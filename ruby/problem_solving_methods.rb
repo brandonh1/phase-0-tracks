@@ -53,13 +53,11 @@ def fibonacci(number)
     array
 end
 
-p fibonacci(0)
+p fibonacci(6)
 
 #release 2
 
-#Bubble sort compares 2 numbers(index and index + 1) and swaps them if 
-#the first number is bigger. It continues looping the entire array until 
-#there is no more swapping to be made.
+#insertion sort builds the final sorted array one item at a time
 
 #I read about bubble sort on wiki and the whole explanation helps.
 #There is visiualization, psuedocode then the actual code.
@@ -68,3 +66,26 @@ p fibonacci(0)
 #My first 2 releases solve the problem but I don't know if it is optimized.
 
 # 
+def sort(array)
+	temp = ""
+	count = 0
+	while count < array.length - 1
+		index = 0
+		while index < array.length - 1
+			if array[index] > array[index+1] 
+				temp = array[index] 
+				array[index] = array[index + 1] 
+				array[index + 1] = temp
+				index = 0
+			end
+			index += 1
+		end
+		count += 1
+	end
+end
+
+a = [5,3,2,6,11]
+
+sort(a)
+
+p a

@@ -33,20 +33,21 @@ mall = {
 
 puts "Welcome to our store."
 puts "What would you like to buy? Your options are:"
-puts "If nothing interests you type 'none'."
-
+#prints out all the clothes and their respective price.
 mall[:brand_clothes].each do |clothing,price|
 	puts "#{clothing} for #{price} dollars."
 end
+puts "If nothing interests you type 'none'."
 
 purchase = gets.chomp
-
 if purchase != "none"
+	#changes the price to sold out when a clothing is purchased.
 	mall[:brand_clothes][purchase] = "sold out"
 	p mall[:brand_clothes]
 	puts "Thanks for your purchase."
 end
 
+#----- is to make it a bit more readable when code is ran
 puts "-------------"
 puts "This is the express food shop."
 p mall[:food_court][:express]
@@ -56,10 +57,14 @@ mall[:food_court][:express]["fried rice"] = 7.5
 p mall[:food_court][:express]
 
 puts "-------------"
-
 puts "This is the dollar store."
 p mall[:dollar_store]
 puts "Adding more items to the dollar store."
 mall[:dollar_store].push("soda","cups","frozen pizza")
 p mall[:dollar_store]
 
+puts "-------------"
+puts "This is the sushi store."
+mall[:food_court][:sushi].each do |food,price| 
+	puts "#{food} is #{price} dollars."
+end

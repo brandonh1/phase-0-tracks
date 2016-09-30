@@ -69,3 +69,22 @@ add_item(list, "onion")
 add_item(list, "ice cream",4)
 remove_item(list, "lemonade")
 update_quantity(list, "ice cream", 1)
+
+#reflection
+=begin
+Pseudocode helped create the methods a lot easier. We basically
+followed the steps we layed out in the psuedocode.
+
+Using arrays made it easier to store the items into the hashes.
+I'm not sure of an easy way to directly store the items 
+entered in a string into a hash. With a hash we can associate the
+item and the quantity, something we can't do with arrays.
+
+You can pass arrays, hashes, integers, strings, into methods. probably
+a lot more too like chars.
+
+We put a method inside another method to print out a list.
+
+I had a better grasp of storing information into a hash and 
+modifiying it.
+=end

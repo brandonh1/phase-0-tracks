@@ -1,5 +1,5 @@
 class Santa
-  attr_reader :age, :ethnicity
+  attr_reader :age, :ethnicity, :reindeer_ranking
   attr_accessor :gender
 
   def initialize(gender,ethnicity)
@@ -7,7 +7,7 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", 
       "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = rand(140)
   end
 
   def speak
@@ -29,6 +29,8 @@ class Santa
 
 end
 
+#releases 0-3
+=begin
 santa1 = Santa.new("a","b")
 p santa1
 santa1.speak
@@ -38,7 +40,22 @@ p santa1.age
 p santa1.ethnicity
 p santa1.gender = "gender changed"
 
-
 santa1.get_mad_at("Vixen")
-
 p santa1
+=end
+
+#release 4
+gender_list = ["male", "female", "gender1", "gender2", "gender3", "N/A"]
+ethnicities_list = ["asian", "white", "black", "pacific islander", "N/A"]
+index = 0
+while index < 1
+  gender = gender_list.sample
+  ethnicity = ethnicities_list.sample
+  new_santa = Santa.new(gender, ethnicity)
+  puts "Santa's gender: #{new_santa.gender}"
+  puts "Santa's ethnicity: #{new_santa.ethnicity}"
+  puts "Santa's age: #{new_santa.age}"
+  puts "Santa's favorite reindeer: #{new_santa.reindeer_ranking.sample}"
+  index += 1
+end
+

@@ -35,12 +35,20 @@ end
 # if not return nil
 # output: print new list
 
+def remove_item(list, item_to_remove)
+  list.delete_if {|item,quantity| item == item_to_remove}
+  print_list(list)
+end
+
 # Method to update the quantity of an item
 # input: take list, item desired to update and quantity number
 # steps: take item that needs to be updated and re asign value with quanitity number
 # output: print new list
 
-
+def update_quantity(list, item, quantity)
+  list[item] = quantity
+  print_list(list)
+end
 
 # Method to print a list and make it look pretty
 # input: take a list as parameter

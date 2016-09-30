@@ -61,3 +61,11 @@ def print_list(list)
     puts "#{item}: #{quantity}"
   end
 end
+
+list = create_list
+add_item(list, "lemonade", 2)
+add_item(list, "tomatoes", 3)
+add_item(list, "onion")
+add_item(list, "ice cream",4)
+remove_item(list, "lemonade")
+update_quantity(list, "ice cream", 1)

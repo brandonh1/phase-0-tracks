@@ -1,16 +1,16 @@
 class Word_game 
-  def initialize(word_length)
+  attr_reader :guesses_made
+  
+  def initialize(answer)
     @list = []
     @guessed_letters = []
     @guesses_made = 0
-    word_length.times {@list << "_"}
+    @answer = answer.split("")
+    @answer.length.times {@list << "_"}
   end
 
-  def take_word(word)
-    word = word.split("")
-  end
-
-  #ended up not using this method. might refactor later
+#ended up not using this method. might refactor later
+=begin
   def limit_reached(guesses,limit)
     if guesses == limit
       true
@@ -18,6 +18,7 @@ class Word_game
       false
     end
   end
+=end
 
   def letters_guessed(letter)
     if @guessed_letters.include? letter
@@ -32,12 +33,12 @@ class Word_game
   #i do this incase there are two of the same letters
   #using .index would return the first index.
   #doesn't return anything of value. using this as a side effect
-  def right_or_wrong(letter,guess)
+  def right_or_wrong(letter)
     index = 0
-    if !guess.include? letter
+    if !@answer.include? letter
       print_letters_guessed
     else
-      guess.each do |i|
+      @answer.each do |i|
         if letter == i
           @list[index] = letter
         end
@@ -66,8 +67,7 @@ class Word_game
 end
 puts "Enter the word to be guessed."
 answer = gets.chomp.downcase
-word = Word_game.new(answer.length)
-answer = word.take_word(answer)
+word = Word_game.new(answer)
 puts "Enter the amount of tries one can make."
 tries = gets.chomp.to_i
 count = 0
@@ -77,14 +77,15 @@ while count < tries
   puts "Guess a letter."
   guess = gets.chomp
   count = word.letters_guessed(guess)
-  word.right_or_wrong(guess,answer)
+  word.right_or_wrong(guess)
+  puts "You have #{tries-word.guesses_made} guess left."
   if word.game_over
     break
   end
 end
 
 if word.game_over
-  puts "Congratulations on winning."
+  puts "Congratulations on winning in #{word.guesses_made} guesses."
 else
   puts "The answer was #{answer}"
   puts "Don't quit your day job."

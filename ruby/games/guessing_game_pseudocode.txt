@@ -1,0 +1,44 @@
+initialize method
+input: length of users guess word
+multiply the length with "_" to create an empty array
+
+method to take user's guess word. 
+input: string as a argument
+split up string and store into an array
+returns guess word in an array  
+
+method to check IF guesses have reached the limit
+input: counter variable, an integer
+check IF guesses made is EQUAL to limit
+  IF it is return true
+  ELSE return false
+
+method to track guesses
+input: the users guess, a letter
+create a list to store the users guess
+create counter variable
+IF the letter is not already in the list
+  add it to the list
+  increase counter variable by 1
+ELSE 
+  return the counter variable
+this method returns how many guesses have been made
+
+method to print
+input: an array
+turn it into string with .join(" ")
+print out string
+
+method to check IF guess is correct or not
+input: a guessed letter, and an array(users guess word), and the original array
+create an index variable
+use include? to check IF letter is in array
+IF it is not
+  return array?
+Else
+  loop through users guess word to find when the guessed letter matches
+  store letter into original array using the index
+increase count
+  
+
+

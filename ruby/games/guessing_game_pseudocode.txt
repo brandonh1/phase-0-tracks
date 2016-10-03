@@ -1,4 +1,8 @@
-method to take user's guess word. initialize method
+initialize method
+input: length of users guess word
+multiply the length with "_" to create an empty array
+
+method to take user's guess word. 
 input: string as a argument
 split up string and store into an array
 returns guess word in an array  

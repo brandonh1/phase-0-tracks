@@ -10,6 +10,7 @@ class Word_game
     word = word.split("")
   end
 
+  #ended up not using this method. might refactor later
   def limit_reached(guesses,limit)
     if guesses == limit
       true
@@ -27,6 +28,10 @@ class Word_game
     end
   end
 
+  #stores the letter into @list as soon as it matches.
+  #i do this incase there are two of the same letters
+  #using .index would return the first index.
+  #doesn't return anything of value. using this as a side effect
   def right_or_wrong(letter,guess)
     index = 0
     if !guess.include? letter

@@ -1,4 +1,4 @@
-method to take user's guess word
+method to take user's guess word. initialize method
 input: string as a argument
 split up string and store into an array
 returns guess word in an array  
@@ -22,17 +22,19 @@ this method returns how many guesses have been made
 
 method to print
 input: an array
-loop with .each to print array
+turn it into string with .join(" ")
+print out string
 
 method to check IF guess is correct or not
-input: a letter, and an array(users guess word), and the original array
+input: a guessed letter, and an array(users guess word), and the original array
+create an index variable
 use include? to check IF letter is in array
 IF it is not
   return array?
 Else
-  loop through the array to find when the letter matches
+  loop through users guess word to find when the guessed letter matches
   store letter into original array using the index
-
+increase count
   
 
 

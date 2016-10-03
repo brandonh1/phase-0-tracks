@@ -1,5 +1,5 @@
 class Word_game 
-  attr_reader :guesses_made
+  attr_reader :guesses_made, :guessed_letters
   
   def initialize(answer)
     @list = []
@@ -58,10 +58,12 @@ class Word_game
 
   def print
      puts guessed = @list.join(" ")
+     guessed #to pass test
   end
 
   def print_letters_guessed
     puts "Letters guessed so far: #{@guessed_letters}"
+    "Letters guessed so far: #{@guessed_letters}" #to pass test
   end
 
 end

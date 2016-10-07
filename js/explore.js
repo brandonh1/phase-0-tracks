@@ -1,0 +1,7 @@
+/*
+split the argument into an array
+create a new variable to hold a string
+use for loop to loop backwards
+store each letter into the new string
+return new string
+*/

@@ -83,3 +83,25 @@ use math.random twice
   second to make random numbers
 use fromCharCode to turn numbers into letters
 */
+
+function randomWords(length) {
+	var words = [];
+	var word = "";
+	for(var i = 0; i < length; i++) {
+		//determines how long the word will be
+		wordLength = Math.floor(Math.random() * 10) + 1;
+		for(var j = 0; j < wordLength; j++) {
+			//makes random number. between 65-90 in unicode is A-Z
+			var randomNum = Math.floor(Math.random() * 26) + 65;
+			//makes random letter from the random number
+			var letter = String.fromCharCode(randomNum);
+			word += letter;
+		}
+		words.push(word);
+		word = ""; //clearing variable so the next random word doesn't get combined with previous one
+	}
+	return words;
+}
+
+var wordList = randomWords(3);
+console.log(wordList);

@@ -103,5 +103,7 @@ function randomWords(length) {
 	return words;
 }
 
-var wordList = randomWords(3);
+var wordList = randomWords(10);
 console.log(wordList);
+var longestRandomWord = longestPhrase(wordList);
+console.log(longestRandomWord);

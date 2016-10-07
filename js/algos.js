@@ -22,3 +22,53 @@ function longestPhrase(arr) {
 
 var longestWord = longestPhrase(["long phrase","longest phrase","longer phrase"]);
 console.log(longestWord);
+
+/*
+use for in loop to compare two objects
+return true if one pair is the same
+for in can be used on either of the objects passed in
+  this will only work if their properties are the same names
+
+//this function works if they don't have the same property names
+//won't work if their lengths aren't the same
+function sharePair(obj1,obj2) {
+	arr1 = [];
+	arr2 = [];
+	for(var prop in obj1) {
+		arr1.push(obj1[prop])
+	}
+	for(var prop2 in obj2) {
+		arr2.push(obj2[prop2])
+	}
+	for(var i = 0; i < arr1.length; i++) {
+		if(arr1[i] == arr2[i]) {
+			return true;
+		}
+	}
+	return false;
+}  
+*/
+
+function sharePair(obj1,obj2) {
+	for(var prop in obj1) {
+		if(obj1[prop] == obj2[prop]) {
+			return true;
+		}
+	}
+	return false;
+}
+
+var persons = {
+	"person1": {
+		name: "Steven",
+		age: 54
+	},
+	"person2": {
+		name: "Tamir",
+		age: 54
+	}
+
+}
+
+var shared = sharePair(persons["person1"],persons["person2"]);
+console.log(shared);

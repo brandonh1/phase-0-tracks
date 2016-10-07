@@ -1,4 +1,5 @@
 /*
+RELEASE 0
 create variable phrase to store the longest phrase
 create variable longest to store the length of first element in array
 use for loop to compare lengths of our variable and the elements in the array
@@ -24,6 +25,7 @@ var longestWord = longestPhrase(["long phrase","longest phrase","longer phrase"]
 console.log(longestWord);
 
 /*
+RELEASE 1
 use for in loop to compare two objects
 return true if one pair is the same
 for in can be used on either of the objects passed in
@@ -72,3 +74,12 @@ var persons = {
 
 var shared = sharePair(persons["person1"],persons["person2"]);
 console.log(shared);
+
+/*
+RELEASE 2
+use for loop where the argument is how many times it will loop
+use math.random twice
+  once to determine how long it will be
+  second to make random numbers
+use fromCharCode to turn numbers into letters
+*/

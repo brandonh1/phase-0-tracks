@@ -1,5 +1,8 @@
 var colors = ["blue", "red", "green", "orange"];
 var names = ["Ed", "Rasp", "horse", "morse"];
+colors.push("pink");
+names.push("Mosby");
+
 var horses = {};
 
 for(var i = 0; i < colors.length; i++) {

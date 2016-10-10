@@ -72,6 +72,22 @@ class VirusPredictor
     else
       speed += 2.5
     end
+    
+    #increment = 0.5
+    #highest_density = 200
+    #speed = 0.0
+ 
+    #while speed == 0.0
+      #if population_density >= highest_density
+        #speed = increment
+      #end
+      #highest_density -= 50 
+      #increment += 0.5
+    #end
+    #not sure if this is a better way to refactor speed of spread
+    #less code but creates two more variables
+
+
 
     puts " and will spread across the state in #{speed} months.\n\n"
 

@@ -1,0 +1,53 @@
+1. Display the information in one table (either table is fine).
+-----------
+sqlite> SELECT * FROM children;
+1|Abigale Wong|5|false|female|1
+2|Ben Wu|6|false|male|2
+3|Drew Lee|6|false|male|3
+4|Edward|8|true|male|1
+5|Harriet Tam|9|false|female|4
+6|Kelly Wong|7|false|female|1
+7|Lily|4|true|female|2
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+-----------
+sqlite> UPDATE children SET age = 10 WHERE name = "Harriet Tam";
+sqlite> SELECT * FROM children WHERE name = "Harriet Tam";
+5|Harriet Tam|10|false|female|4
+
+3. Display the information in both tables using one query.
+-----------
+sqlite> SELECT * FROM children,parents WHERE children.parents_id = parents.id;
+1|Abigale Wong|5|false|female|1|1|Denis Wong|true
+2|Ben Wu|6|false|male|2|2|Elaine Wu|true
+3|Drew Lee|6|false|male|3|3|Gary Lee|false
+4|Edward|8|true|male|1|1|Denis Wong|true
+5|Harriet Tam|10|false|female|4|4|Rick Tam|true
+6|Kelly Wong|7|false|female|1|1|Denis Wong|true
+7|Lily|4|true|female|2|2|Elaine Wu|true
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) 
+from both tables using one query.
+-----------
+
+sqlite> SELECT children.name, parents.name FROM children JOIN parents ON children.parents_id = parents.id;
+Abigale Wong|Denis Wong
+Ben Wu|Elaine Wu
+Drew Lee|Gary Lee
+Edward|Denis Wong
+Harriet Tam|Rick Tam
+Kelly Wong|Denis Wong
+Lily|Elaine Wu
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+Harriet is now 10 and does not need the daycare. She was id 5.
+-----------
+
+sqlite> DELETE FROM children WHERE name = "Harriet Tam";
+sqlite> SELECT * FROM children;
+1|Abigale Wong|5|false|female|1
+2|Ben Wu|6|false|male|2
+3|Drew Lee|6|false|male|3
+4|Edward|8|true|male|1
+6|Kelly Wong|7|false|female|1
+7|Lily|4|true|female|2

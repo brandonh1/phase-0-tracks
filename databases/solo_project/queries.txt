@@ -51,3 +51,22 @@ sqlite> SELECT * FROM children;
 4|Edward|8|true|male|1
 6|Kelly Wong|7|false|female|1
 7|Lily|4|true|female|2
+
+
+release 3
+---------
+
+sqlite> SELECT parents.name, children.name, children.gender FROM children LEFT JOIN parents ON children.parents_id = parents.id;
+Denis Wong|Abigale Wong|female
+Elaine Wu|Ben Wu|male
+Gary Lee|Drew Lee|male
+Denis Wong|Edward|male
+Denis Wong|Kelly Wong|female
+Elaine Wu|Lily|female
+
+
+
+sqlite> SELECT children.name, parents.name FROM children JOIN parents ON children.parents_id = parents.id WHERE parents.id = 1;
+Abigale Wong|Denis Wong
+Edward|Denis Wong
+Kelly Wong|Denis Wong

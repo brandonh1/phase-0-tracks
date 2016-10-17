@@ -34,12 +34,20 @@ end
 def show_list(list)
   full_list = list.execute("SELECT * FROM signups")
   full_list.each do |entry|
-    puts "#{entry['name']}'s email is #{entry['email']}"
+    puts "ID #{entry['id']} | #{entry['name']}'s email is #{entry['email']}"
   end
 end
 
 list.execute(create_table_cmd)
 
-add_signup(list,"person","email@email.com")
-update_email(list,update_email_cmd,"yahoo@yahoo.com",2)
+#add_signup(list,"person","email@email.com")
+#update_email(list,update_email_cmd,"yahoo@yahoo.com",2)
+
+puts "What is your name?"
+name = gets.chomp
+puts "What is your email?"
+email = gets.chomp
+
+add_signup(list,name,email)
+
 show_list(list)

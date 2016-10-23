@@ -59,3 +59,22 @@ get '/great_job/' do
   end
 end
 
+get '/:num1/add/:num2' do
+  sum = params[:num1].to_i + params[:num2].to_i
+  "The result is #{sum}."
+end
+
+get '/search/' do
+  students = db.execute("SELECT * FROM students")
+  name = params[:name]
+  not_found = ""
+  students.each do |student|
+    if name == student['name']
+      return "#{name} is #{student['age']} years old and is located in 
+      the #{student['campus']} campus."
+    else
+      not_found = "This student is not on file. Try another name."
+    end
+  end
+  not_found
+end

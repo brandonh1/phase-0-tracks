@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title>Email list</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+	<h1>Email list</h1>
+	<h2>Click <a href="emails/new">here</a> to enter a new email.</h2>
+	<ul>
+		<% @emails.each do|email| %>
+		  <li><%= email['name'] %> - <%= email['email'] %></li>
+		<% end %>
+	</ul>
+<body>
+</body>
+</html>
